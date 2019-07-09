@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>javascript--localstorage</title>
+</head>
+<body>
+    <p id="num"></p>
+    <button onclick="add()">+</button>
+
+    <script>    
+        var val = 0;
+        if (val != undefined || val != "") {
+            val = localStorage.getItem('pValue');
+        } else {
+            localStorage.setItem('pValue', val);
+        }
+        document.getElementById('num').innerHTML = val;
+
+        function add () {
+            val++;
+            localStorage.setItem('pValue', val);
+            document.getElementById('num').innerHTML = localStorage.getItem('pValue');
+        }
+    </script>
+</body>
+</html>
